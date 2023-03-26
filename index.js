@@ -27,9 +27,14 @@ app.post("/chat", async (req, res) => {
     res.send(completion.data.choices[0].text);
 });
 
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
+})
+
+app.get('/test', (req, res) => {
+    console.log("Just got a request!")
+    res.send('Yo! test')
 })
 
 // Start the server
